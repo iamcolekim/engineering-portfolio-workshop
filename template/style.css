@@ -1,0 +1,82 @@
+/*
+****
+These spacing, font, and alignment rules are the same controls you’d use in Wix or WordPress, just written down.
+****
+*/
+
+/* Global page styling */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.6;
+    color: #222;
+}
+
+/* Header / hero */
+header {
+    margin-bottom: 3rem;
+}
+
+h1 {
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+/* Section spacing */
+section {
+    margin-bottom: 3rem;
+}
+
+/* project layouts */
+
+.projects.list .project {
+    /* Style Variant 1: Resume/List style for projects */
+    border-left: 4px solid #ddd;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.projects.cards {
+    /* Style Variant 2: Grid layout for project cards */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.projects.cards .project {
+    /* Style Variant 2: Child element styling for project cards */
+    border: 1px solid #ddd;
+    padding: 1.25rem;
+    border-radius: 6px;
+}
+
+.projects.gallery {
+    /* Style Variant 3: Image gallery for projects */
+    /* Use with images inside each project card instead of text such as the above variants */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.projects.gallery img {
+    /* Style Variant 3: Image Child element styling for gallery */
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.75rem;
+}
+
+.projects.featured .project:first-child {
+    /* Hero project card:
+Make the first project span two columns */
+    grid-column: span 2;
+}
+
+/* Lists */
+ul {
+    padding-left: 1.2rem;
+}
