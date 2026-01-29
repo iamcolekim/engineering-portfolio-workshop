@@ -304,3 +304,49 @@ button:focus-visible {
 }
 
 /* Facilitator: keep contrast high and focus states visible for keyboard users. */
+
+/* Project card and hero hooks (added for project/about pages) */
+.project-card {
+    border: 1px solid #eee;
+    padding: 1rem;
+    border-radius: 8px;
+    background: #fff;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+}
+.project-card img {
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    width: 100%;
+    height: auto;
+}
+.project-hero {
+    padding: 2rem 0;
+}
+.project-subtitle {
+    color: var(--muted);
+}
+
+/* About page hooks */
+.about-hero {
+    padding: 2rem 0;
+}
+.about-intro {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 1rem;
+    align-items: start;
+    max-width: var(--max-width);
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
+.about-intro img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+.about-skills {
+    max-width: var(--max-width);
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
