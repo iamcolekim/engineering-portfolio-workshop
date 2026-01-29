@@ -27,6 +27,7 @@ body {
     color: var(--text);
     background: var(--bg);
     margin: 0 auto;
+    padding: 0 var(--page-pad);
     line-height: 1.6;
     max-width: var(--max-width);
 }
@@ -84,24 +85,23 @@ body {
    inner .container. Adjusts responsively for small and large screens. */
 .fullscreen-bleed .hero .hero__overlay,
 .hero.hero--fullscreen .hero__overlay {
-    min-height: 50vh;
+    min-height: max(50vh, 100%);
     display: flex;
     align-items: center;
-    padding: 0; /* let min-height govern vertical spacing */
+    padding: 2rem min(5vw, 2rem);
 }
 
 @media (max-width: 639px) {
     .fullscreen-bleed .hero .hero__overlay,
     .hero.hero--fullscreen .hero__overlay {
-        min-height: 40vh;
-        padding: 1.5rem 0;
+        min-height: max(40vh, 100%);
     }
 }
 
 @media (min-width: 1024px) {
     .fullscreen-bleed .hero .hero__overlay,
     .hero.hero--fullscreen .hero__overlay {
-        min-height: 60vh;
+        min-height: max(60vh, 100%);
     }
 }
 
@@ -110,7 +110,7 @@ body {
 .fullscreen-bleed .hero,
 .hero.hero--fullscreen {
     width: 100vw;
-    height: 50vh;
+    min-height: 50vh;
     margin-left: calc(50% - 50vw);
     position: relative;
     overflow: hidden;
@@ -138,6 +138,7 @@ body {
 }
 
 /* add a subtle color-tinted overlay using the accent for fullscreen heroes */
+
 .hero.hero--fullscreen::before {
     content: '';
     position: absolute;
@@ -147,12 +148,16 @@ body {
     z-index: 1;
 }
 
-.hero.hero--fullscreen h1 {
-    font-size: 4.5rem; /* largest on small viewports */
+/* Base heading sizes (mobile-first, inverted scaling: largest on small screens) */
+h1 {
+}
+
+/* ensure header headings (top of page) use hero sizing even when .hero isn't present */
+header h1 {
+    font-size: 4rem;
 }
 
 .hero h1 {
-    font-size: 3rem; /* largest on small viewports for readability */
     margin: 0 0 0.25rem 0;
     line-height: 1.05;
 }
@@ -175,23 +180,25 @@ section {
     margin-bottom: 2.25rem;
 }
 h1 {
+    font-size: 3.5rem;
     margin-bottom: 0.5rem;
 }
-/* Responsive, inverted scaling: largest on small viewports, smaller as viewport grows */
+/* Responsive, inverted scaling: largest on small viewports, smaller as viewport grows.
+   Maintain clear size steps: h1 > h2 > h3 > p at each breakpoint. */
 h2 {
     margin-bottom: 1rem;
-    font-size: 3rem; /* base: largest on small screens */
+    font-size: 2rem; /* base (0-639px): smaller than h1 (3rem) */
 }
 
 h3 {
     margin-bottom: 0.5rem;
-    font-size: 2.5rem; /* base */
+    font-size: 1.5rem; /* base */
 }
 
 p {
     margin-top: 0;
     margin-bottom: 1rem;
-    font-size: 2rem; /* base */
+    font-size: 1.125rem; /* base (≈18px) */
 }
 
 /* Project layout variants (keep original variants but more teachable) */
@@ -248,23 +255,24 @@ button:focus-visible {
 /* Small screens  */
 @media (min-width: 640px) {
     body {
-        padding: 0;
+        padding: 0 var(--page-pad);
     }
-    .hero h1 {
-        font-size: 7rem;
+    h1 {
+        font-size: 2.75rem;
     }
-    .hero.hero--fullscreen h1 {
-        font-size: 7rem;
+    header h1 {
+        font-size: 3.25rem;
     }
 
+    /* Medium screens: step down but keep hierarchy */
     h2 {
-        font-size: 2.5rem;
+        font-size: 1.75rem;
     }
     h3 {
-        font-size: 2rem;
+        font-size: 1.25rem;
     }
     p {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     .hero {
         padding: 3rem 0;
@@ -277,23 +285,24 @@ button:focus-visible {
 /* Large screens */
 @media (min-width: 1024px) {
     body {
-        padding: 0;
+        padding: 0 var(--page-pad);
     }
-    .hero h1 {
-        font-size: 7rem;
+    /* Large screens: compact sizes, maintain readable hierarchy */
+    h1 {
+        font-size: 2rem;
     }
-    .hero.hero--fullscreen h1 {
-        font-size: 7rem;
+    header h1 {
+        font-size: 2.5rem;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.25rem;
     }
     h3 {
-        font-size: 1.55rem;
+        font-size: 1rem;
     }
     p {
-        font-size: 1rem;
+        font-size: 0.9375rem;
     }
     .hero p {
         font-size: 1.125rem;
