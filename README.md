@@ -31,7 +31,10 @@ The goal is to help you **communicate your work clearly**, not to learn web deve
 This contains the files you will edit during the workshop.
 
 -   `index.html` – your portfolio content and structure
+-   `about.html` – expansion of "mission statement," "elevator pitch," "value add", etc.
 -   `style.css` – basic visual styling
+-   `assets/` – a folder for any large files to load into the website
+-   `projects/` – for deeper dives into your work
 
 You can download this folder as a ZIP and work locally.
 
@@ -43,8 +46,8 @@ During the workshop, you will:
 
 1. Fill in your portfolio content using the template
 2. Choose **one** way to publish it:
-    - GitHub Pages (optional, technical)
-    - Website builders (Wix / WordPress / Google Sites)
+    - GitHub Pages -- Design, Upload, Publish (optional, more technical)
+    - Website builders -- Frame, Transfer Ideas, Design, Publish (using Wix / WordPress / Google Sites)
 
 All options are valid for job applications.
 
