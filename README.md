@@ -11,14 +11,10 @@ You do NOT need prior experience with web development.
 
 ---
 
-## What This Is
+## This is a branch for publication only
 
--   A simple, professional portfolio template
--   A blueprint that works across platforms:
-    -   GitHub Pages
-    -   Wix
-    -   WordPress
-    -   Google Sites
+- There is not much to observe on this branch other than that it has moved the files from `template/` into `/ (root)` (one level outside, `template/..`) for integrating with GitHub Pages.
+    - GitHub Pages isn't the only way to do this, it was just the selected approach for this workshop so the link is portable.
 
 The goal is to help you **communicate your work clearly**, not to learn web development.
 
@@ -26,38 +22,16 @@ The goal is to help you **communicate your work clearly**, not to learn web deve
 
 ## Folder Guide
 
-### `/template`
+### `/template` has been removed, all content is in the root directory
 
-This contains the files you will edit during the workshop.
+We still retain the files editted during the workshop.
 
--   `index.html` – your portfolio content and structure
--   `about.html` – expansion of "mission statement," "elevator pitch," "value add", etc.
--   `style.css` – basic visual styling
--   `assets/` – a folder for any large files to load into the website
--   `projects/` – for deeper dives into your work
-
-You can download this folder as a ZIP and work locally.
+- `index.html` – your portfolio content and structure
+- `about.html` – expansion of "mission statement," "elevator pitch," "value add", etc.
+- `style.css` – basic visual styling
+- `assets/` – a folder for any large files to load into the website
+- `projects/` – for deeper dives into your work
 
 ---
 
-## How You Will Use This
-
-During the workshop, you will:
-
-1. Fill in your portfolio content using the template
-2. Choose **one** way to publish it:
-    - GitHub Pages -- Design, Upload, Publish (optional, more technical)
-    - Website builders -- Frame, Transfer Ideas, Design, Publish (using Wix / WordPress / Google Sites)
-
-All options are valid for job applications.
-
----
-
-## You Are Not Expected To
-
--   Write JavaScript
--   Use frameworks
--   Understand hosting infrastructure
--   Customize beyond your comfort level
-
-Focus on clarity and structure.
+Switch back to branch `main` if you wish to keep up with the workshop
