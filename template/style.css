@@ -5,7 +5,7 @@
 :root {
     --max-width: 900px;
     --page-pad: 1.25rem;
-    --accent: #0b66d0; /* blue accent for lines and links */
+    --accent: #6c5ce7; /* updated accent for workshop (was #0b66d0) */
     --muted: #666;
     --text: #111;
     --bg: #fff;
@@ -28,7 +28,6 @@ body {
     background: var(--bg);
     margin: 0 auto;
     line-height: 1.6;
-    padding: calc(var(--page-pad) * 2);
     max-width: var(--max-width);
 }
 
@@ -56,7 +55,7 @@ body {
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0;
 }
 
 /* HERO */
@@ -79,8 +78,81 @@ body {
     padding: 2rem 0;
 }
 
+/* Center hero content vertically for fullscreen/bleed variants.
+   We set a minimum height on the overlay so the visual center lands around 25vh
+   from the top of the header (min-height ~50vh), and use flexbox to center the
+   inner .container. Adjusts responsively for small and large screens. */
+.fullscreen-bleed .hero .hero__overlay,
+.hero.hero--fullscreen .hero__overlay {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    padding: 0; /* let min-height govern vertical spacing */
+}
+
+@media (max-width: 639px) {
+    .fullscreen-bleed .hero .hero__overlay,
+    .hero.hero--fullscreen .hero__overlay {
+        min-height: 40vh;
+        padding: 1.5rem 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .fullscreen-bleed .hero .hero__overlay,
+    .hero.hero--fullscreen .hero__overlay {
+        min-height: 60vh;
+    }
+}
+
+/* Full-bleed (optional) - toggles: add class 'fullscreen-bleed' to <body> or 'hero--fullscreen' to the <header>
+   This block keeps the main content constrained with .container while allowing the header to span the viewport. */
+.fullscreen-bleed .hero,
+.hero.hero--fullscreen {
+    width: 100vw;
+    height: 50vh;
+    margin-left: calc(50% - 50vw);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    color: #fff;
+    background-color: #111; /* fallback color */
+}
+
+/* When an image is present via --hero-image, layer it and ensure cover positioning */
+.fullscreen-bleed .hero.hero--image,
+.hero.hero--fullscreen.hero--image {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.15)), var(--hero-image);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Keep the inner content centered and above the background */
+.fullscreen-bleed .hero .container,
+.hero.hero--fullscreen .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* add a subtle color-tinted overlay using the accent for fullscreen heroes */
+.hero.hero--fullscreen::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(108, 92, 231, 0.2) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero.hero--fullscreen h1 {
+    font-size: 4.5rem; /* largest on small viewports */
+}
+
 .hero h1 {
-    font-size: 1.75rem;
+    font-size: 3rem; /* largest on small viewports for readability */
     margin: 0 0 0.25rem 0;
     line-height: 1.05;
 }
@@ -105,9 +177,21 @@ section {
 h1 {
     margin-bottom: 0.5rem;
 }
+/* Responsive, inverted scaling: largest on small viewports, smaller as viewport grows */
 h2 {
     margin-bottom: 1rem;
-    font-size: 1.125rem;
+    font-size: 3rem; /* base: largest on small screens */
+}
+
+h3 {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem; /* base */
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem; /* base */
 }
 
 /* Project layout variants (keep original variants but more teachable) */
@@ -161,13 +245,26 @@ button:focus-visible {
     outline-offset: 3px;
 }
 
-/* Small screens -> larger typography and spacing at breakpoints */
+/* Small screens  */
 @media (min-width: 640px) {
     body {
-        padding: calc(var(--page-pad) * 3);
+        padding: 0;
     }
     .hero h1 {
-        font-size: 2.25rem;
+        font-size: 7rem;
+    }
+    .hero.hero--fullscreen h1 {
+        font-size: 7rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.5rem;
     }
     .hero {
         padding: 3rem 0;
@@ -177,12 +274,26 @@ button:focus-visible {
     }
 }
 
+/* Large screens */
 @media (min-width: 1024px) {
     body {
-        padding: calc(var(--page-pad) * 4);
+        padding: 0;
     }
     .hero h1 {
-        font-size: 3rem;
+        font-size: 7rem;
+    }
+    .hero.hero--fullscreen h1 {
+        font-size: 7rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.55rem;
+    }
+    p {
+        font-size: 1rem;
     }
     .hero p {
         font-size: 1.125rem;
