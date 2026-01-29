@@ -1,0 +1,74 @@
+/*! normalize.css v8.0.1 | MIT License | https://necolas.github.io/normalize.css/ */
+/* Facilitator: Local copy for offline workshops. Version and source recorded here so instructors can explain why it's included. */
+
+/* Document-level defaults */
+html {
+    line-height: 1.15; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Remove default margin on body */
+body {
+    margin: 0;
+}
+
+/* Make main display block */
+main {
+    display: block;
+}
+
+/* Improve consistency for headings */
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+/* Images and media should scale */
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Remove default form element margins */
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+}
+
+/* Inherit fonts for selects */
+select {
+    text-transform: none;
+}
+
+/* Remove inner focus outline on Firefox for buttons */
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* Make sure anchors inherit color by default */
+a {
+    background-color: transparent;
+}
+
+/* Avoid subtle subscript/superscript layout differences */
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+/* End of normalize copy (minimal subset adapted for teaching) */

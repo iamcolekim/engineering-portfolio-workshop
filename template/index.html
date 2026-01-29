@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -10,80 +10,86 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
+        <!-- Facilitator: Skip link helps keyboard users jump straight to content. -->
+        <a class="skip-link" href="#main-content">Skip to main content</a>
+
         <!-- HEADER / HERO
-       Maps to: Wix header / WordPress cover / Google Sites banner -->
-        <header>
-            <h1>Your Name</h1>
-            <p>Engineering Discipline · Key Interests · Location</p>
+             Maps to: Wix header / WordPress cover / Google Sites banner -->
+        <!-- Facilitator: The hero is intentionally simple. Use the optional example below to add a background image. -->
+
+        <!-- Optional hero image harness (commented). To use: remove surrounding comments and set path. -->
+        <!--
+                <header class="hero hero--image" style="--hero-image: url('assets/images/stock-image.jpg')" role="banner">
+                    <div class="hero__overlay">
+                        <div class="container">
+                            <h1>Your Name</h1>
+                            <div class="accent-line" aria-hidden="true"></div>
+                            <p>Engineering Discipline · Key Interests · Location</p>
+                        </div>
+                    </div>
+                </header>
+                -->
+
+        <!-- Default (clean) hero variant: high-impact but minimal. -->
+        <header class="hero" role="banner">
+            <div class="container">
+                <!-- Facilitator: Change heading text and the short tagline. Keep tagline concise for high impact. -->
+                <h1>Your Name</h1>
+                <div class="accent-line" aria-hidden="true"></div>
+                <p>Engineering Discipline · Key Interests · Location</p>
+            </div>
         </header>
 
         <!-- ABOUT SECTION
        Maps to: “About Me” section on all platforms -->
-        <section>
-            <h2>About</h2>
-            <p>Write 3–4 sentences about who you are professionally. Focus on what kind of problems you like working on.</p>
-        </section>
+        <main id="main-content">
+            <section>
+                <h2>About</h2>
+                <!-- Facilitator: Encourage students to write 3–4 short sentences. Show an example in workshops. -->
+                <p>Write 3–4 sentences about who you are professionally. Focus on what kind of problems you like working on.</p>
+            </section>
 
-        <!-- PROJECTS SECTION
+            <!-- PROJECTS SECTION
        Maps to: Project cards / repeaters / columns -->
-        <section class="projects list">
-            <!-- Use class "list", "cards" or "gallery" for different styles -->
-            <h2>Projects</h2>
+            <section class="projects list">
+                <!-- Facilitator: Switch the class to "cards" or "gallery" to show different layouts during the workshop. -->
+                <h2>Projects</h2>
 
-            <!-- PROJECT CARDS
-            <article class="project">
-                <h3>Project Title</h3>
-                <p>
-                    <strong>Problem:</strong> What was the challenge?<br />
-                    <strong>Approach:</strong> What did you do?<br />
-                    <strong>Tools:</strong> Software, hardware, methods.<br />
-                    <strong>Outcome:</strong> What changed or improved?
-                </p>
-            </article>
+                <!-- Example project card. Facilitator: replace image path and alt with descriptive text. -->
+                <article class="project">
+                    <img src="assets/images/stock-image.jpg" alt="Prototype of a sensor array used for environmental monitoring" />
+                    <h3>Project Title</h3>
+                    <p>Short description.</p>
+                </article>
+                <article class="project">
+                    <img src="assets/images/stock-image.jpg" alt="Screenshot of a dashboard showing project metrics" />
+                    <h3>Project Title</h3>
+                    <p>Short description.</p>
+                </article>
 
-            <article class="project">
-                <h3>Project Title</h3>
-                <p>
-                    <strong>Problem:</strong> What was the challenge?<br />
-                    <strong>Approach:</strong> What did you do?<br />
-                    <strong>Tools:</strong> Software, hardware, methods.<br />
-                    <strong>Outcome:</strong> What changed or improved?
-                </p>
-            </article>
-            -->
-            <article class="project">
-                <img src="assets/images/stock-image.jpg" alt="Project image" />
-                <h3>Project Title</h3>
-                <p>Short description.</p>
-            </article>
-            <article class="project">
-                <img src="assets/images/stock-image.jpg" alt="Project image" />
-                <h3>Project Title</h3>
-                <p>Short description.</p>
-            </article>
+                <!-- Duplicate this block for additional projects -->
+            </section>
 
-            <!-- Duplicate this block for additional projects -->
-        </section>
-
-        <!-- SKILLS SECTION
+            <!-- SKILLS SECTION
        Maps to: Skills lists / tags -->
-        <section>
-            <h2>Skills</h2>
-            <ul>
-                <li>Skill or Tool</li>
-                <li>Skill or Tool</li>
-                <li>Skill or Tool</li>
-            </ul>
-        </section>
+            <section>
+                <h2>Skills</h2>
+                <ul>
+                    <li>Skill or Tool</li>
+                    <li>Skill or Tool</li>
+                    <li>Skill or Tool</li>
+                </ul>
+            </section>
 
-        <!-- CONTACT SECTION -->
-        <section>
-            <h2>Contact</h2>
-            <p>
-                Email: your.email@example.com<br />
-                LinkedIn: linkedin.com/in/yourname<br />
-                GitHub (optional): github.com/yourusername
-            </p>
-        </section>
+            <!-- CONTACT SECTION -->
+            <section>
+                <h2>Contact</h2>
+                <p>
+                    Email: <a href="mailto:your.email@example.com">your.email@example.com</a><br />
+                    LinkedIn: <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener">linkedin.com/in/yourname</a><br />
+                    GitHub (optional): <a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a>
+                </p>
+            </section>
+        </main>
     </body>
 </html>
